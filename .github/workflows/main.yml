@@ -53,7 +53,6 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
 
   build-and-push-docker-image2:
-    needs: test-backend
     if : github.ref == 'refs/heads/main'
     # run only when code is compiling and tests are passing
     runs-on: ubuntu-22.04
@@ -74,7 +73,6 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
 
   build-and-push-docker-image3:
-    needs: test-backend
     # run only when code is compiling and tests are passing
     runs-on: ubuntu-22.04
     if : github.ref == 'refs/heads/main'
